@@ -17,7 +17,7 @@ Le TDD est une approche du processus de developpement qui consiste à rédiger l
 
 **2.** Citez deux avantages concrets du TDD. *(5 pts)*
 
-Le TDD permet de pouvoir créer rapidement un code sûr. Dans le sens ou, comme le développement avant avec la validation des tests, on est garanti de produire un code robuste pour la production. Ensuite, le TDD permet également d'éviter de possible régression car les tests précedemment écrit seront la pour prévenir d'une régression s'ils échouent lors des tests.
+Le TDD permet de pouvoir créer rapidement un code sûr. Dans le sens ou, comme le développement avant avec la validation des tests, on est garanti de produire un code robuste pour la production. Ensuite, le TDD permet également d'éviter de possible régression car si les précedents tests échouent, alors ils y a un probleme avec le nouveau code.
 
 **3.** Quelle est la différence entre un fake et un stub ? Donnez un exemple rapide. *(5 pts)*
 
