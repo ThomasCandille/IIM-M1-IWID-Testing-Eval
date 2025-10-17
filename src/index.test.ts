@@ -30,7 +30,11 @@ class Panier {
     }
 
     getPrice(): number {
-        return this.items.reduce((total, produit) => total + produit.prix, 0);
+        let total = this.items.reduce((total, produit) => total + produit.prix, 0);
+        if (total > 100) {
+            return total *= 0.9;
+        }
+        return total;
     }
 }
 
@@ -55,14 +59,16 @@ describe("Mon produit doit", () => {
 
 describe("Mon panier doit", () => {
 
-    const panier = new Panier();
-
     test("Être vide au départ", () => {
+
+    const panier = new Panier();
 
         expect(panier.getItemsCount()).toBe(0);
     });
 
     test("Ajouter un produit dans le panier", () => {
+
+    const panier = new Panier();
 
         const produit = new Produit("Banane", 2.0);
         panier.addProductToCart(produit);
@@ -71,6 +77,8 @@ describe("Mon panier doit", () => {
     });
 
     test("Afficher les produits dans le panier", () => {
+
+    const panier = new Panier();
 
         const produit1 = new Produit("Orange", 1.0);
         const produit2 = new Produit("Raisin", 3.0);
@@ -82,6 +90,8 @@ describe("Mon panier doit", () => {
     });
 
     test("Retourner le total du panier", () => {
+
+    const panier = new Panier();
 
         const produit1 = new Produit("Mangue", 4.0);
         const produit2 = new Produit("Ananas", 5.0);
@@ -96,6 +106,8 @@ describe("Mon panier doit", () => {
     });
 
     test("Appliquer 10% de remise si le total dépasse 100", () => {
+
+    const panier = new Panier();
 
         const produit1 = new Produit("Produit cher 1", 60.0);
         const produit2 = new Produit("Produit cher 2", 50.0);
