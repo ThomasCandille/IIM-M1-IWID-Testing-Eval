@@ -20,6 +20,10 @@ class Panier {
     getItemsCount(): number {
         return this.items.length;
     }
+
+    addProductToCart(produit: Produit): void {
+        this.items.push(produit);
+    }
 }
 
 
