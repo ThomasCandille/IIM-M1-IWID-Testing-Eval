@@ -94,4 +94,19 @@ describe("Mon panier doit", () => {
         expect(total).toBe(9.0);
 
     });
+
+    test("Appliquer 10% de remise si le total dépasse 100", () => {
+
+        const produit1 = new Produit("Produit cher 1", 60.0);
+        const produit2 = new Produit("Produit cher 2", 50.0);
+
+        panier.addProductToCart(produit1);
+        panier.addProductToCart(produit2);
+
+        let total = panier.getPrice();
+
+        expect(total).toBe((produit1.prix + produit2.prix) * 0.9);
+
+   });
+
 });
