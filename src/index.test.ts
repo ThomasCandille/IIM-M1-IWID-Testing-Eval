@@ -77,4 +77,17 @@ describe("Mon panier doit", () => {
         expect(panier.displayArticles()).toEqual([produit1, produit2]);
     });
 
+    test("Retourner le total du panier", () => {
+
+        const produit1 = new Produit("Mangue", 4.0);
+        const produit2 = new Produit("Ananas", 5.0);
+
+        panier.addProductToCart(produit1);
+        panier.addProductToCart(produit2);
+
+        const total = panier.getPrice();
+
+        expect(total).toBe(9.0);
+
+    });
 });
