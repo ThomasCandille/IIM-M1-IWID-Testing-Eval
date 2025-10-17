@@ -2,9 +2,11 @@ import {describe, test, expect } from "@jest/globals";
 
 class Produit {
     nom: string;
+    prix: number;
 
-    constructor(nom: string) {
+    constructor(nom: string, prix: number) {
         this.nom = nom;
+        this.prix = prix;
     }
 }
 
@@ -13,7 +15,7 @@ describe("Mon produit doit", () => {
         const nomProduit = "Pomme";
         const prixProduit = 1.5;
 
-        const produit = new Produit(nomProduit);
+        const produit = new Produit(nomProduit, prixProduit);
 
     test("Avoir un nom", () => {
 
@@ -21,7 +23,7 @@ describe("Mon produit doit", () => {
     });
 
     test("Avoir un prix", () => {
-        
-        expect((produit.prix).toBe(prixProduit));
+
+        expect(produit.prix).toBe(prixProduit);
     });
 });
