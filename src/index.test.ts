@@ -10,6 +10,19 @@ class Produit {
     }
 }
 
+class Panier {
+    items: Produit[];
+
+    constructor() {
+        this.items = [];
+    }
+
+    getItemsCount(): number {
+        return this.items.length;
+    }
+}
+
+
 describe("Mon produit doit", () => {
 
         const nomProduit = "Pomme";
