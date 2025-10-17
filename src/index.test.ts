@@ -121,4 +121,20 @@ describe("Mon panier doit", () => {
 
    });
 
+   test("Ne pas appliquer de remise si le total est inférieur ou égal à 100", () => {
+
+    const panier = new Panier();
+
+        const produit1 = new Produit("Produit abordable 1", 40.0);
+        const produit2 = new Produit("Produit abordable 2", 50.0);
+
+        panier.addProductToCart(produit1);
+        panier.addProductToCart(produit2);
+
+        let total = panier.getPrice();
+
+        expect(total).toBe(produit1.prix + produit2.prix);
+
+   });
+
 });
