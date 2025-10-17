@@ -50,4 +50,12 @@ describe("Mon panier doit", () => {
         expect(panier.getItemsCount()).toBe(0);
     });
 
+    test("Ajouter un produit dans le panier", () => {
+
+        const produit = new Produit("Banane", 2.0);
+        panier.addProductToCart(produit);
+
+        expect(panier.getItemsCount()).toBe(1);
+    });
+
 });
