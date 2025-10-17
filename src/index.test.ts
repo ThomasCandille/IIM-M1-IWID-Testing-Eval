@@ -28,6 +28,10 @@ class Panier {
     displayArticles(): Produit[] {
         return this.items;
     }
+
+    getPrice(): number {
+        return this.items.reduce((total, produit) => total + produit.prix, 0);
+    }
 }
 
 
