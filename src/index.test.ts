@@ -137,4 +137,20 @@ describe("Mon panier doit", () => {
 
    });
 
+   test("Le total ne dépasse pas deux chiffres après la virgule", () => {
+
+    const panier = new Panier();
+
+        const produit1 = new Produit("Produit précis 1", 33.33);
+        const produit2 = new Produit("Produit précis 2", 116.86);
+
+        panier.addProductToCart(produit1);
+        panier.addProductToCart(produit2);
+
+        let total = panier.getPrice();
+
+        expect(total).toBe(((produit1.prix + produit2.prix) * 0.9).toFixed(2));
+
+   });
+
 });
