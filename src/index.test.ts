@@ -10,3 +10,11 @@ describe("Mon produit doit", () => {
         expect(produit.nom).toBe(nomProduit);
     });
 });
+
+class Produit {
+    nom: string;
+
+    constructor(nom: string) {
+        this.nom = nom;
+    }
+}
