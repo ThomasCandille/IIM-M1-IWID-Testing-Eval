@@ -1,16 +1,5 @@
 import {describe, test, expect } from "@jest/globals";
 
-describe("Mon produit doit", () => {
-    test("Avoir un nom", () => {
-
-        const nomProduit = "Pomme";
-
-        const produit = new Produit(nomProduit);
-
-        expect(produit.nom).toBe(nomProduit);
-    });
-});
-
 class Produit {
     nom: string;
 
@@ -18,3 +7,21 @@ class Produit {
         this.nom = nom;
     }
 }
+
+describe("Mon produit doit", () => {
+
+        const nomProduit = "Pomme";
+        const prixProduit = 1.5;
+
+        const produit = new Produit(nomProduit);
+
+    test("Avoir un nom", () => {
+
+        expect(produit.nom).toBe(nomProduit);
+    });
+
+    test("Avoir un prix", () => {
+        
+        expect((produit.prix).toBe(prixProduit));
+    });
+});
