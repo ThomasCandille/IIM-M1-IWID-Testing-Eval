@@ -1,4 +1,5 @@
 import {describe, test, expect } from "@jest/globals";
+import { parse } from "path";
 
 class Produit {
     nom: string;
@@ -32,9 +33,9 @@ class Panier {
     getPrice(): number {
         let total = this.items.reduce((total, produit) => total + produit.prix, 0);
         if (total > 100) {
-            return (total *= 0.9).toFixed(2) as unknown as number;
+            total *= 0.9;
         }
-        return total;
+        return parseFloat(total.toFixed(2));
     }
 }
 
@@ -115,7 +116,7 @@ describe("Mon panier doit", () => {
         panier.addProductToCart(produit1);
         panier.addProductToCart(produit2);
 
-        let total = panier.getPrice();
+        const total = panier.getPrice();
 
         expect(total).toBe((produit1.prix + produit2.prix) * 0.9);
 
@@ -131,7 +132,7 @@ describe("Mon panier doit", () => {
         panier.addProductToCart(produit1);
         panier.addProductToCart(produit2);
 
-        let total = panier.getPrice();
+        const total = panier.getPrice();
 
         expect(total).toBe(produit1.prix + produit2.prix);
 
@@ -147,9 +148,9 @@ describe("Mon panier doit", () => {
         panier.addProductToCart(produit1);
         panier.addProductToCart(produit2);
 
-        let total = panier.getPrice();
+        const total = panier.getPrice();
 
-        expect(total).toBe(((produit1.prix + produit2.prix) * 0.9).toFixed(2) as unknown as number);
+        expect(total).toBe(parseFloat(((produit1.prix + produit2.prix) * 0.9).toFixed(2)));
 
    });
 
