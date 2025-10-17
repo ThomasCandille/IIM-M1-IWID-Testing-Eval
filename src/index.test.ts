@@ -62,4 +62,15 @@ describe("Mon panier doit", () => {
         expect(panier.getItemsCount()).toBe(1);
     });
 
+    test("Afficher les produits dans le panier", () => {
+
+        const produit1 = new Produit("Orange", 1.0);
+        const produit2 = new Produit("Raisin", 3.0);
+
+        panier.addProductToCart(produit1);
+        panier.addProductToCart(produit2);
+
+        expect(panier.displayArticles()).toEqual([produit1, produit2]);
+    });
+
 });
