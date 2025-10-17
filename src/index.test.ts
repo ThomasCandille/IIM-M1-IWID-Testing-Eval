@@ -24,6 +24,10 @@ class Panier {
     addProductToCart(produit: Produit): void {
         this.items.push(produit);
     }
+
+    displayArticles(): Produit[] {
+        return this.items;
+    }
 }
 
 
