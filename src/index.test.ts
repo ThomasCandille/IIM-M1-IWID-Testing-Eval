@@ -32,7 +32,7 @@ class Panier {
     getPrice(): number {
         let total = this.items.reduce((total, produit) => total + produit.prix, 0);
         if (total > 100) {
-            return total *= 0.9;
+            return (total *= 0.9).toFixed(2) as unknown as number;
         }
         return total;
     }
@@ -149,7 +149,7 @@ describe("Mon panier doit", () => {
 
         let total = panier.getPrice();
 
-        expect(total).toBe(((produit1.prix + produit2.prix) * 0.9).toFixed(2));
+        expect(total).toBe(((produit1.prix + produit2.prix) * 0.9).toFixed(2) as unknown as number);
 
    });
 
