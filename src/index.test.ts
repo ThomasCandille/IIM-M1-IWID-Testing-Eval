@@ -27,3 +27,14 @@ describe("Mon produit doit", () => {
         expect(produit.prix).toBe(prixProduit);
     });
 });
+
+describe("Mon panier doit", () => {
+
+    const panier = new Panier();
+
+    test("Être vide au départ", () => {
+
+        expect(panier.getItemsCount()).toBe(0);
+    });
+
+});
